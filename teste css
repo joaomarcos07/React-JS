@@ -1,75 +1,47 @@
-.text-js{
-  opacity: 0;
-}
-.cursor{
-  display: block;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  right: -5px;
-  width: 2px;
-  /* Change colour of Cursor Here */
-  background-color: white;
-  z-index: 1;
-  animation: flash 0.5s none infinite alternate;
-}
-@keyframes flash{
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-
-
-
-
-// Rest of CSS (Purely for this pen)
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
-
-*{
+* {
   margin: 0;
   padding: 0;
-  boz-sizing: border-box;
-  font-family: "Open Sans", sans-serif
+  box-sizing: border-box;
 }
-body{
-  background: linear-gradient(135deg,#00C4FF,#9D1BB2);
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #eee;
+}
+.container {
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
-// Text Can be styled just like normal
-.headline{
-  margin: 20px;
-  color: white;
-  font-size: 32px;
+.container p {
+  font-size: 3rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
   text-align: center;
-  h1{
-    letter-spacing: 1.6px;
-    font-weight: 300;
-  }
+  overflow: hidden;
 }
-
-.twitterLink{
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 10px 15px;
-  z-index: 3;
-  svg{
-    width: 25px;
-  }
+.container p span.typed-text {
+  font-weight: normal;
+  color: #dd7732;
 }
-
-.credit{
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-decoration: none;
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
 }
